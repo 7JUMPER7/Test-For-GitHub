@@ -6,6 +6,52 @@
         xmlns:local="clr-namespace:Test_For_GitHub"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#145a8c">
+    <Window.Resources>
+        <Style x:Key="LogInButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate x:Name="bg" TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                                Width="123"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Height="30"
+                                BorderBrush="#00171f"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                TextBlock.Foreground="White">
+                            <ContentPresenter Content="{TemplateBinding Content}"
+                                              TextBlock.FontFamily="Century Gothic Bold"
+                                              TextBlock.FontSize="18"
+                                              TextBlock.TextAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="White"/>
+                                <Setter TargetName="border" Property="TextBlock.Foreground" Value="#00171f"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value=".7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Century Gothic"></Setter>
+            <Setter Property="FontSize" Value="17"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="#ef233c"/>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -14,9 +60,9 @@
         </Grid.ColumnDefinitions>
         
         <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <TextBox x:Name="MainTextBox" Margin="5"></TextBox>
-            <Button x:Name="MainButton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Click="MainButton_Click">test</Button>
-            <Label x:Name="MainLabel" Margin="5"></Label>
+            <TextBox x:Name="MainTextBox" Margin="5" Style="{StaticResource TextBoxStyle}"></TextBox>
+            <Button x:Name="MainButton" Click="MainButton_Click" Style="{StaticResource LogInButtonStyle}" Background="Transparent" BorderThickness="2">test</Button>
+            <Label x:Name="MainLabel" Margin="5" FontFamily="Century Gothic Bold" Foreground="White" FontSize="17"></Label>
         </StackPanel>
     </Grid>
 </Window>
