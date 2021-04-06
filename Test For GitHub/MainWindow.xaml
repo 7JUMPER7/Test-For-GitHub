@@ -1,0 +1,22 @@
+﻿<Window x:Class="Test_For_GitHub.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_For_GitHub"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#145a8c">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBox x:Name="MainTextBox" Margin="5"></TextBox>
+            <Button x:Name="MainButton" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Click="MainButton_Click">test</Button>
+            <Label x:Name="MainLabel" Margin="5"></Label>
+        </StackPanel>
+    </Grid>
+</Window>
