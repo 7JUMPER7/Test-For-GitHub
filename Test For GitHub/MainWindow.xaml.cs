@@ -29,6 +29,8 @@ namespace Test_For_GitHub
         {
             MainLabel.Content = MainTextBox.Text;
             MessageBox.Show($"{MainTextBox.Text} {MainTextBox.Text}");
+            MainLabel.Content = "Text: " + MainTextBox.Text;
+            MessageBox.Show($"Text: { MainTextBox.Text}");
         }
     }
 }
