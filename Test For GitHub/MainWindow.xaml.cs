@@ -27,7 +27,8 @@ namespace Test_For_GitHub
 
         private void MainButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MainLabel.Content = MainTextBox.Text;
+            MessageBox.Show(MainTextBox.Text);
         }
     }
 }
